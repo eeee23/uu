@@ -62,7 +62,8 @@ function yh_send(tex)
     else{yh_text[gn()] = yh_text[gn()] + `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     if (kf_text[gn()] == undefined){kf_text[gn()] = `<div class="message incoming"><p>`+tex+`</p></div>`;}
     else{kf_text[gn()] = kf_text[gn()] + `<div class="message incoming"><p>`+tex+`</p></div>`;}
-    now_yh.push(gn());
+    var un = localStorage.getItem('un');
+    now_yh.push(un);
     update();
 }
 function kf_send(tex)
