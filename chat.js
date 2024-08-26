@@ -55,7 +55,7 @@ function updata()
     sendData(yh_text,'yh_text');
     sendData(kf_text,'kf_text');
     sendData(now_yh,'now_yh');
-    yh_name = ('yh_name');
+    yh_name = gData('yh_name');
     yh_text = gData('yh_text');
     kf_text = gData('kf_text');
     now_yh = gData('now_yh');
