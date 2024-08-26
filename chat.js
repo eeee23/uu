@@ -2,6 +2,25 @@ var yh_text = {};
 var kf_text = {};
 var yh_name = {};
 var now_yh = [];
+function sendData(data, name) {
+  const dataStr = JSON.stringify(data);
+  const url = `https://database.autumnrain.top/w?name=${name}&data=${dataStr}`;
+  fetch(url)
+   .then(response => response.text())
+   .then(result => {
+      console.log(result);
+    })
+   .catch(error => {
+      console.error('Error:', error);
+    });
+}
+function updata()
+{
+    sendData(yh_name,'yh_name');
+    sendData(yh_text,'yh_text');
+    sendData(kf_text,'kf_text');
+    sendData(now_yh,'now_yh');
+}
 function getIPWithRetry(retryCount = 0, maxRetries = 5) {
     return new Promise((resolve, reject) => {
         fetch('https://api.ipify.org?format=json')
@@ -46,6 +65,7 @@ function wn()
     yh_name[getIP()] = un;
     console.log("un:"+un);
     console.log("yh_name:"+yh_name[getIP()]);
+    updata();
 }
 function gn()
 {
@@ -65,6 +85,7 @@ function yh_send(tex)
     var un = localStorage.getItem('un');
     now_yh.push(un);
     update();
+    updata();
 }
 function kf_send(tex)
 {
@@ -73,6 +94,7 @@ function kf_send(tex)
     if (yh_text[gn()] == undefined){yh_text[gn()] = `<div class="message incoming"><p>`+tex+`</p></div>`;}
     else{yh_text[gn()] = yh_text[gn()] + `<div class="message incoming"><p>`+tex+`</p></div>`;}
     update();
+    updata();
 }
 function loadun()
 {
@@ -90,11 +112,13 @@ function loadun()
             document.body.innerHTML = document.body.innerHTML + '<div id="tab'+i+'" class="tab-content" id="tab'+i+'"><div class="chat-card"><div class="chat-header"><div class="h2">'+now_yh[i]+'</div></div><div class="chat-body" id="chat"></div><div class="chat-footer"><input placeholder="请输入您的回答" type="text" id="inpyh"><button onclick="kf_send(document.getElementById("inpyh").value)">发送</button></div></div>'+yh_text[now_yh[i]]+'</div>';
         }
     }
+    updata();
 }
 function user()
 {
     var name = gn();
     var ip = getIP();
     document.getElementById("lin").href = "./user.css"
-    document.body.innerHTML = '<div class="container"><img src="pic.jpg" alt="头像" class="avatar"><h2>'+name+'</h2><p>IP 地址：'+ip+'</p></div>'
+    document.body.innerHTML = '<div class="container"><img src="pic.jpg" alt="头像" class="avatar"><h2>'+name+'</h2><p>IP 地址：'+ip+'</p></div>';
+    updata();
 }
