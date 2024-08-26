@@ -14,12 +14,32 @@ function sendData(data, name) {
       console.error('Error:', error);
     });
 }
+function gData(name)
+{
+  fetch('https://database.autumnrain.top/g?name='+name)
+  .then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP 错误！状态码: ${response.status}`);
+  }
+  return response.json();
+  })
+  .then(data => {
+  console.log(data);
+  })
+  .catch(error => {
+  console.error('获取 JSON 数据时出现错误:', error);
+  });
+}
 function updata()
 {
     sendData(yh_name,'yh_name');
     sendData(yh_text,'yh_text');
     sendData(kf_text,'kf_text');
     sendData(now_yh,'now_yh');
+    yh_name = gData('yh_name');
+    yh_text = gData('yh_text');
+    kf_text = gData('kf_text');
+    now_yh = gData('now_yh');
 }
 function getIPWithRetry(retryCount = 0, maxRetries = 5) {
     return new Promise((resolve, reject) => {
