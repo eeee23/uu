@@ -2,6 +2,25 @@ var yh_text = {};
 var kf_text = {};
 var yh_name = {};
 var now_yh = [];
+function check_un()
+{
+    if (yh_name == undefined)
+    {
+        if (yh_text == undefined)
+        {
+            if (kf_text == undefined)
+            {
+                if (now_yh == undefined)
+                {
+                    now_yh = [];
+                }
+                kf_text = {};
+            }
+            yh_text = {};
+        }
+        yh_name = {};
+    }
+}
 function sendData(data, name) {
   const dataStr = JSON.stringify(data);
   const url = `https://database.autumnrain.top/w?name=${name}&data=${dataStr}`;
@@ -41,6 +60,7 @@ function updata()
     kf_text = gData('kf_text');
     now_yh = gData('now_yh');
     console.log(yh_name);
+    check_un();
 }
 function gdata()
 {
@@ -48,6 +68,7 @@ function gdata()
     yh_text = gData('yh_text');
     kf_text = gData('kf_text');
     now_yh = gData('now_yh');
+    check_un();
 }
 function getIPWithRetry(retryCount = 0, maxRetries = 5) {
     return new Promise((resolve, reject) => {
