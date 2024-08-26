@@ -112,9 +112,9 @@ function getIP()
 function wn()
 {
     var un = localStorage.getItem('un');
-    yh_name[getIP()] = un;
     console.log("un:"+un);
     console.log("yh_name:"+yh_name[getIP()]);
+    yh_name[getIP()] = un;
 }
 function gn()
 {
