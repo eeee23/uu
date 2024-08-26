@@ -85,7 +85,6 @@ function getIP()
         }
     });
     return localStorage.getItem('ipAddress')
-    updata();
 }
 function wn()
 {
@@ -97,12 +96,10 @@ function wn()
 }
 function gn()
 {
-    updata();
     return yh_name[getIP()];
 }
 function update()
 {
-    updata();
     document.getElementById("chat").innerHTML = yh_text[gn()];
     console.log(yh_text[gn()])
 }
@@ -120,7 +117,6 @@ function yh_send(tex)
 }
 function kf_send(tex)
 {
-    updata();
     if (yh_text[gn()] == undefined){kf_text[gn()] = `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     else{kf_text[gn()] = kf_text[gn()] + `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     if (yh_text[gn()] == undefined){yh_text[gn()] = `<div class="message incoming"><p>`+tex+`</p></div>`;}
