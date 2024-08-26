@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="./chat.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-card">
+        <div class="chat-header">
+            <div class="h2">客服</div>
+        </div>
+        <div class="chat-body" id="chat"></div>
+        <div class="chat-footer">
+            <input placeholder="请输入您的问题" type="text" id="inpyh">
+            <button onclick="yh_send(document.getElementById('inpyh').value)">发送</button>
+        </div>
+    </div>
+    <script src="./chat.js"></script>
+</body>
+</html>
