@@ -92,7 +92,6 @@ function wn()
     yh_name[getIP()] = un;
     console.log("un:"+un);
     console.log("yh_name:"+yh_name[getIP()]);
-    updata();
 }
 function gn()
 {
