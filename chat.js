@@ -40,6 +40,7 @@ function updata()
     yh_text = JSON.parse(gData('yh_text'));
     kf_text = JSON.parse(gData('kf_text'));
     now_yh = JSON.parse(gData('now_yh'));
+    console.log(yh_name);
 }
 function gdata()
 {
