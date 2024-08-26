@@ -133,7 +133,6 @@ function yh_send(tex)
     var un = localStorage.getItem('un');
     now_yh.push(un);
     update();
-    updata();
 }
 function kf_send(tex)
 {
@@ -142,7 +141,6 @@ function kf_send(tex)
     if (yh_text[gn()] == undefined){yh_text[gn()] = `<div class="message incoming"><p>`+tex+`</p></div>`;}
     else{yh_text[gn()] = yh_text[gn()] + `<div class="message incoming"><p>`+tex+`</p></div>`;}
     update();
-    updata();
 }
 function loadun()
 {
@@ -161,7 +159,6 @@ function loadun()
             document.body.innerHTML = document.body.innerHTML + '<div id="tab'+i+'" class="tab-content" id="tab'+i+'"><div class="chat-card"><div class="chat-header"><div class="h2">'+now_yh[i]+'</div></div><div class="chat-body" id="chat"></div><div class="chat-footer"><input placeholder="请输入您的回答" type="text" id="inpyh"><button onclick="kf_send(document.getElementById("inpyh").value)">发送</button></div></div>'+yh_text[now_yh[i]]+'</div>';
         }
     }
-    updata();
 }
 function user()
 {
@@ -171,3 +168,4 @@ function user()
     document.body.innerHTML = '<div class="container"><img src="pic.jpg" alt="头像" class="avatar"><h2>'+name+'</h2><p>IP 地址：'+ip+'</p></div>';
     updata();
 }
+updata();
