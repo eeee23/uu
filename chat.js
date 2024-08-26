@@ -2,6 +2,7 @@ var yh_text = {};
 var kf_text = {};
 var yh_name = {};
 var now_yh = [];
+updata();
 function check_un()
 {
     if (yh_name == undefined)
@@ -168,4 +169,3 @@ function user()
     document.body.innerHTML = '<div class="container"><img src="pic.jpg" alt="头像" class="avatar"><h2>'+name+'</h2><p>IP 地址：'+ip+'</p></div>';
     updata();
 }
-updata();
