@@ -41,6 +41,13 @@ function updata()
     kf_text = gData('kf_text');
     now_yh = gData('now_yh');
 }
+function gdata()
+{
+    yh_name = gData('yh_name');
+    yh_text = gData('yh_text');
+    kf_text = gData('kf_text');
+    now_yh = gData('now_yh');
+}
 function getIPWithRetry(retryCount = 0, maxRetries = 5) {
     return new Promise((resolve, reject) => {
         fetch('https://api.ipify.org?format=json')
@@ -123,7 +130,7 @@ function kf_send(tex)
 }
 function loadun()
 {
-    updata();
+    gdata();
     if (now_yh.length == 0)
     {
         document.getElementById("tabs").innerHTML = `<div class="tab active-tab" onclick="openTab(event, 'tab1')">无</div>`;
@@ -142,7 +149,7 @@ function loadun()
 }
 function user()
 {
-    updata();
+    gdata();
     var name = gn();
     var ip = getIP();
     document.getElementById("lin").href = "./user.css"
