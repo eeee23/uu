@@ -114,7 +114,7 @@ function wn()
     var un = localStorage.getItem('un');
     console.log("un:"+un);
     console.log("yh_name:"+yh_name[getIP()]);
-    var yh_name[getIP()] = un;
+    Object.assign(yh_name, {getIP():un});
 }
 function gn()
 {
