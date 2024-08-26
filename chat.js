@@ -104,7 +104,6 @@ function update()
 }
 function yh_send(tex)
 {
-    updata();
     if (yh_text[gn()] == undefined){yh_text[gn()] = `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     else{yh_text[gn()] = yh_text[gn()] + `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     if (kf_text[gn()] == undefined){kf_text[gn()] = `<div class="message incoming"><p>`+tex+`</p></div>`;}
