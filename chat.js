@@ -144,7 +144,6 @@ function loadun()
 }
 function user()
 {
-    gdata();
     var name = gn();
     var ip = getIP();
     document.getElementById("lin").href = "./user.css"
