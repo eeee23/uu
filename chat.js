@@ -78,6 +78,7 @@ function getIP()
         }
     });
     return localStorage.getItem('ipAddress')
+    updata();
 }
 function wn()
 {
@@ -89,15 +90,18 @@ function wn()
 }
 function gn()
 {
+    updata();
     return yh_name[getIP()];
 }
 function update()
 {
+    updata();
     document.getElementById("chat").innerHTML = yh_text[gn()];
     console.log(yh_text[gn()])
 }
 function yh_send(tex)
 {
+    updata();
     if (yh_text[gn()] == undefined){yh_text[gn()] = `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     else{yh_text[gn()] = yh_text[gn()] + `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     if (kf_text[gn()] == undefined){kf_text[gn()] = `<div class="message incoming"><p>`+tex+`</p></div>`;}
@@ -109,6 +113,7 @@ function yh_send(tex)
 }
 function kf_send(tex)
 {
+    updata();
     if (yh_text[gn()] == undefined){kf_text[gn()] = `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     else{kf_text[gn()] = kf_text[gn()] + `<div class="message outgoing"><p>`+tex+`</p></div>`;}
     if (yh_text[gn()] == undefined){yh_text[gn()] = `<div class="message incoming"><p>`+tex+`</p></div>`;}
@@ -118,6 +123,7 @@ function kf_send(tex)
 }
 function loadun()
 {
+    updata();
     if (now_yh.length == 0)
     {
         document.getElementById("tabs").innerHTML = `<div class="tab active-tab" onclick="openTab(event, 'tab1')">无</div>`;
@@ -136,6 +142,7 @@ function loadun()
 }
 function user()
 {
+    updata();
     var name = gn();
     var ip = getIP();
     document.getElementById("lin").href = "./user.css"
