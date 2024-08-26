@@ -36,7 +36,7 @@ function updata()
     sendData(yh_text,'yh_text');
     sendData(kf_text,'kf_text');
     sendData(now_yh,'now_yh');
-    yh_name = JSON.parse(gData('yh_name')[0]);
+    yh_name = ('yh_name');
     yh_text = JSON.parse(gData('yh_text'));
     kf_text = JSON.parse(gData('kf_text'));
     now_yh = JSON.parse(gData('now_yh'));
@@ -44,7 +44,7 @@ function updata()
 function gdata()
 {
     yh_name = gData('yh_name');
-    yh_text = JSON.parse(gData('yh_text'));
+    yh_text = gData('yh_text');
     kf_text = JSON.parse(gData('kf_text'));
     now_yh = JSON.parse(gData('now_yh'));
 }
