@@ -44,7 +44,7 @@ function wn()
 {
     var un = localStorage.getItem('un');
     yh_name[getIP()] = un;
-    console.log(un);
+    console.log("un:"+un);
 }
 function gn()
 {
