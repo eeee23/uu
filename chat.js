@@ -118,7 +118,7 @@ function kf_send(tex)
 }
 function loadun()
 {
-    if (now_yh.length <= 0)
+    if (now_yh.length == 0)
     {
         document.getElementById("tabs").innerHTML = `<div class="tab active-tab" onclick="openTab(event, 'tab1')">无</div>`;
         document.body.innerHTML = document.body.innerHTML + '<div id="tab1" class="tab-content" id="tab1">还没有人说话……</div>';
